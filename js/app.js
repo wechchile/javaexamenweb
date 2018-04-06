@@ -8,8 +8,9 @@ window.onload= function(){
       document.getElementById('display').innerHTML=valor;
     }else if (valor2>0) {
       document.getElementById('display').innerHTML=val1.concat(valor);
+    }else if (valor=='.'){
+      document.getElementById('display').innerHTML=val1.concat(valor);
     }
-    console.log(valor2+valor);
   }
    document.getElementById('1').onclick= function(){
      pantalla(1);
@@ -43,7 +44,10 @@ window.onload= function(){
    }
 
    document.getElementById('punto').onclick= function(){
-     document.getElementById('display').value='.';
+    pantalla('.')
+   }
+   document.getElementById('on').onclick= function(){
+    document.getElementById('display').innerHTML='0';
    }
 
 }
