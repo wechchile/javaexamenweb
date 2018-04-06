@@ -16,7 +16,7 @@ window.onload= function(){
      document.getElementById('display').value='1';
    }
    document.getElementById('5').onclick= function(){
-     alert('uno');
+     console.log('5')
      document.getElementById('display').value='1';
    }
    document.getElementById('6').onclick= function(){
