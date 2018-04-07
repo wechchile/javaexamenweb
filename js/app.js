@@ -1,19 +1,36 @@
 window.onload= function(){
-  var gvalor=0
+  var bandera=0
   function pantalla(valor){
     var  val1= document.getElementById('display').innerHTML;
-    var  valor2=parseInt(val1);
+    var  valor2=parseFloat(val1);
     console.log(val1);
     if (val1=='0'){
-      document.getElementById('display').innerHTML=valor;
+       if (valor=='.'){
+         if (bandera==0){
+           document.getElementById('display').innerHTML=val1.concat(valor);
+           bandera=1;
+           console.log(bandera);
+         }
+       }else{
+         document.getElementById('display').innerHTML=valor;
+       }
     }else if (valor2>0) {
-      document.getElementById('display').innerHTML=val1.concat(valor);
-    }else if (valor=='.'){
-      document.getElementById('display').innerHTML=val1.concat(valor);
+       if (valor=='.'){
+         if (bandera==0){
+         document.getElementById('display').innerHTML=val1.concat(valor);
+         bandera=1;
+       }else {
+         if (valor!='.')
+            document.getElementById('display').innerHTML=val1.concat(valor);
+       }
+      }
     }
   }
+
    document.getElementById('1').onclick= function(){
+      document.getElementById("1").style.Color = "red";
      pantalla(1);
+     document.getElementById("1").style.Color = "black";
    }
    document.getElementById('2').onclick= function(){
      pantalla(2);
@@ -48,6 +65,8 @@ window.onload= function(){
    }
    document.getElementById('on').onclick= function(){
     document.getElementById('display').innerHTML='0';
-   }
+    bandera=0;
+    }
+
 
 }
