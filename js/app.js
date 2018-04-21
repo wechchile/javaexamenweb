@@ -93,58 +93,125 @@ window.onload= function(){
 
   }
 
-   document.getElementById('1').onmousedown=function(){
-      document.getElementById("1").style.hover();
-   }
+   /*document.getElementById('1').onmousedown=function(){
+      document.getElementById("1").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("1").style.transform="scale(1)";
+       }, 200);
+   }*/
   
    document.getElementById('1').onclick= function(){
-     pantalla(1);    
+     pantalla(1); 
+     document.getElementById("1").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("1").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('2').onclick= function(){
      pantalla(2);
+     document.getElementById("2").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("2").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('3').onclick= function(){
      pantalla(3);
+     document.getElementById("3").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("3").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('4').onclick= function(){
      pantalla(4);
+     document.getElementById("4").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("4").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('5').onclick= function(){
      pantalla(5);
+     document.getElementById("5").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("5").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('6').onclick= function(){
      pantalla(6);
+     document.getElementById("6").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("6").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('7').onclick= function(){
      pantalla(7);
+     document.getElementById("7").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("7").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('8').onclick= function(){
      pantalla(8);
+     document.getElementById("8").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("8").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('9').onclick= function(){
      pantalla(9);
+     document.getElementById("9").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("9").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('0').onclick= function(){
      pantalla(0);
+     document.getElementById("0").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("0").style.transform="scale(1)";
+       }, 200);   
    }
    //inicio de operacion matematica
    document.getElementById('mas').onclick= function(){
      sumar(document.getElementById('display').innerHTML);
+     document.getElementById("mas").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("mas").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('igual').onclick= function(){
      resultado(document.getElementById('display').innerHTML);
+     document.getElementById("igual").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("igual").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('menos').onclick= function(){
      resta(document.getElementById('display').innerHTML);
+     document.getElementById("menos").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("menos").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('dividido').onclick= function(){
      dividir(document.getElementById('display').innerHTML);
+     document.getElementById("dividido").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("dividido").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('por').onclick= function(){
      multipli(document.getElementById('display').innerHTML);
+     document.getElementById("por").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("por").style.transform="scale(1)";
+       }, 200);   
    }
    document.getElementById('sign').onclick= function(){
      camsign(document.getElementById('display').innerHTML);
+     document.getElementById("sign").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("sign").style.transform="scale(1)";
+       }, 200);   
    }
 
    document.getElementById('punto').onclick= function(){
@@ -152,6 +219,10 @@ window.onload= function(){
            pantalla('.');
            bandera=1;
       }
+      document.getElementById("punto").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("punto").style.transform="scale(1)";
+       }, 200);   
    }
 
    document.getElementById('on').onclick= function(){
@@ -159,5 +230,11 @@ window.onload= function(){
     bandera=0;
     operacion='';
     }
+    document.getElementById('on').addEventListener("click", function() {
+       document.getElementById("on").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("on").style.transform="scale(1)";
+       }, 200);
+      });
 
 }
