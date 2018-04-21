@@ -52,7 +52,13 @@ window.onload= function(){
 
       
   }
-  
+  function araiz(valor){   
+   var modif ="";
+   var resul=0;
+   resul=Math.sqrt(valor);
+   modif=resul.toString();
+   document.getElementById('display').innerHTML=modif.substr(0,9); 
+  }
 
   function pantalla(valor){
     var  val1= document.getElementById('display').innerHTML;
@@ -211,6 +217,13 @@ window.onload= function(){
      document.getElementById("sign").style.transform="scale(0.9)";
        setTimeout(function () {
         document.getElementById("sign").style.transform="scale(1)";
+       }, 200);   
+   }
+   document.getElementById('raiz').onclick= function(){
+     araiz(document.getElementById('display').innerHTML);
+     document.getElementById("raiz").style.transform="scale(0.9)";
+       setTimeout(function () {
+        document.getElementById("raiz").style.transform="scale(1)";
        }, 200);   
    }
 
