@@ -6,31 +6,22 @@ window.onload= function(){
   function sumar(valor){
       memoria=parseFloat(valor);
       operacion ='sumar';
-      console.log(operacion);
-      console.log(memoria);
 
   }
 
   function resta(valor){
         memoria=parseFloat(valor);
       operacion ='resta';
-      console.log(operacion);
-      console.log(memoria);
-
   }
 
    function multipli(valor){
         memoria=parseFloat(valor);
       operacion ='multp';
-      console.log(operacion);
-      console.log(memoria);
    }
 
    function dividir(valor){
         memoria=parseFloat(valor);
       operacion ='divid';
-      console.log(operacion);
-      console.log(memoria);
    }
 
    function camsign(valor){
@@ -41,28 +32,44 @@ window.onload= function(){
 
   function resultado(valor){
       var resul =0;
-      if (operacion=='sumar'){
-         resul= memoria + parseFloat(valor); 
-      }
-      if (operacion=='resta'){
-         resul= memoria - parseFloat(valor); 
-      }
-      if (operacion=='divid'){
-         resul= memoria / parseFloat(valor); 
-      }
-      if (operacion=='multp'){
-         resul= memoria * parseFloat(valor); 
+      var alma='';
+      if (operacion!=''){
+        if (operacion=='sumar'){
+           resul= memoria + parseFloat(valor); 
+        }
+        if (operacion=='resta'){
+           resul= memoria - parseFloat(valor); 
+        }
+        if (operacion=='divid'){
+           resul= memoria / parseFloat(valor); 
+        }
+        if (operacion=='multp'){
+           resul= memoria * parseFloat(valor); 
+        } 
+        alma=resul.toString();
+        document.getElementById('display').innerHTML=alma.substr(0,9);      
       }
 
-      document.getElementById('display').innerHTML=resul;
+      
   }
   
 
   function pantalla(valor){
     var  val1= document.getElementById('display').innerHTML;
     var  valor2=parseFloat(val1);
-    console.log(val1);
-    /* if (val1=='0'){
+    var contenido=0;
+      if (val1=='0'){
+        document.getElementById('display').innerHTML=valor;
+      }else if( val1!='0'){
+        if (operacion==''){
+             contenido=val1.concat(valor); 
+              
+            document.getElementById('display').innerHTML=contenido.substr(0,9);         
+        }else{
+            document.getElementById('display').innerHTML=valor;
+        }
+      }
+    /* 
        if (valor=='.'){
          if (bandera==0){
            document.getElementById('display').innerHTML=val1.concat(valor);
@@ -83,13 +90,15 @@ window.onload= function(){
        }
       }
     }*/
-     document.getElementById('display').innerHTML=valor;
+
   }
 
+   document.getElementById('1').onmousedown=function(){
+      document.getElementById("1").style.hover();
+   }
+  
    document.getElementById('1').onclick= function(){
-      document.getElementById("1").style.Color = "red";
-     pantalla(1);
-     document.getElementById("1").style.Color = "black";
+     pantalla(1);    
    }
    document.getElementById('2').onclick= function(){
      pantalla(2);
@@ -139,7 +148,10 @@ window.onload= function(){
    }
 
    document.getElementById('punto').onclick= function(){
-    pantalla('.')
+    if (bandera==0){
+           pantalla('.');
+           bandera=1;
+      }
    }
 
    document.getElementById('on').onclick= function(){
@@ -147,6 +159,5 @@ window.onload= function(){
     bandera=0;
     operacion='';
     }
-
 
 }
