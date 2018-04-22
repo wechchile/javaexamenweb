@@ -65,7 +65,12 @@ window.onload= function(){
     var  valor2=parseFloat(val1);
     var contenido=0;
       if (val1=='0'){
-        document.getElementById('display').innerHTML=valor;
+        if (valor=='.'){
+            document.getElementById('display').innerHTML=val1.concat(valor);
+        }else{
+            document.getElementById('display').innerHTML=valor;
+          
+        }
       }else if( val1!='0'){
         if (operacion==''){
              contenido=val1.concat(valor); 
