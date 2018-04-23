@@ -6,22 +6,25 @@ window.onload= function(){
   function sumar(valor){
       memoria=parseFloat(valor);
       operacion ='sumar';
-
+      dispcero();
   }
 
   function resta(valor){
         memoria=parseFloat(valor);
       operacion ='resta';
+      dispcero();
   }
 
    function multipli(valor){
         memoria=parseFloat(valor);
       operacion ='multp';
+      dispcero();
    }
 
    function dividir(valor){
         memoria=parseFloat(valor);
       operacion ='divid';
+      dispcero();
    }
 
    function camsign(valor){
@@ -29,35 +32,50 @@ window.onload= function(){
       resul=resul*-1;
       document.getElementById('display').innerHTML=resul; 
    }
+   function dispcero(){
+     document.getElementById('display').innerHTML='0';
+   }
 
   function resultado(valor){
       var resul =0;
       var alma='';
       if (operacion!=''){
+        switch (operacion){
+           case 'sumar': resul= memoria + parseFloat(valor);
+                         break
+           case 'resta': resul= memoria - parseFloat(valor); 
+                         break;
+           case 'divid': resul= memoria / parseFloat(valor); 
+                         break;
+           case 'multp': resul= memoria * parseFloat(valor); 
+                         break;
+         }
+        /* 
         if (operacion=='sumar'){
-           resul= memoria + parseFloat(valor); 
-        }
-        if (operacion=='resta'){
+           resul= memoria + parseFloat(valor);
+          
+        }else if (operacion=='resta'){
            resul= memoria - parseFloat(valor); 
-        }
-        if (operacion=='divid'){
+           
+        }else if (operacion=='divid'){
            resul= memoria / parseFloat(valor); 
-        }
-        if (operacion=='multp'){
+           
+        }else if (operacion=='multp'){
            resul= memoria * parseFloat(valor); 
-        } 
-        alma=resul.toString();
-        document.getElementById('display').innerHTML=alma.substr(0,9);      
+          
+        } */
+             
       }
-
-      
+    alma=resul.toString();
+    document.getElementById('display').innerHTML=alma.substr(0,8);      
   }
+
   function araiz(valor){   
    var modif ="";
    var resul=0;
    resul=Math.sqrt(valor);
    modif=resul.toString();
-   document.getElementById('display').innerHTML=modif.substr(0,9); 
+   document.getElementById('display').innerHTML=modif.substr(0,8); 
   }
 
   function pantalla(valor){
@@ -73,10 +91,13 @@ window.onload= function(){
         }
       }else if( val1!='0'){
         if (operacion==''){
-             contenido=val1.concat(valor); 
-              
-            document.getElementById('display').innerHTML=contenido.substr(0,9);         
+             contenido=val1.concat(valor);              
+             document.getElementById('display').innerHTML=contenido.substr(0,9);         
         }else{
+            if (operacion!=''){
+                contenido=val1.concat(valor);              
+                document.getElementById('display').innerHTML=contenido.substr(0,9); 
+            }else
             document.getElementById('display').innerHTML=valor;
         }
       }
